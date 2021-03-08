@@ -1,0 +1,2 @@
+class PlaceCollectionsController < ApplicationController
+end

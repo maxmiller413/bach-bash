@@ -1,0 +1,22 @@
+<h1> NEW USER </h1>
+
+<%= form_for @user do |f| %>
+
+    <%= f.label :username, "Enter Username" %>
+    <%= f.text_field :username %><br>
+
+    <%= f.label :password, "Password" %>
+    <%= f.password_field :password %><br>
+
+    <%= f.label :first_name, "First Name" %>
+    <%= f.text_field :first_name %><br>
+
+    <%= f.label :last_name, "Last Name" %>
+    <%= f.text_field :last_name %><br>
+
+    <%= f.label :email, "Email Address" %>
+    <%= f.text_field :email %><br>
+
+    <%= f.submit "Sign Up", method: :post %>
+
+<% end %>
