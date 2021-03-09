@@ -4,7 +4,7 @@ Place.destroy_all
 Party.destroy_all
 User.destroy_all 
 
-User.create(username: "max", password: "abc", email: "max@example.com")
+User.create(username: "max", password: "abc", first_name: "max", last_name: "miller", email: "max@example.com")
 Place.create(name: "my name is place", address: "im an address", city: "im a city", state: "IL")
 Party.create(name: "Max's bach")
 Collection.create(name: "weekend", user_id: 1, party_id: 1)
