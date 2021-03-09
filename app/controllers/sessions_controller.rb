@@ -24,17 +24,19 @@ class SessionsController < ApplicationController
   end
 
   def new
-      @user = User.new
+      @new_user = User.new
   end 
 
   def create
-      @user = User.create(user_params)
+  
+      @new_user = User.create(username: params[:username], password: params[:password], first_name: params[:first_name], last_name: params[:last_name], email: params[:email])
+      session[:user_id] = @new_user.id
       redirect_to new_party_path
   end 
 
   private
   def user_params
-      params.require(:user).permit(:username, :password, :first_name, :last_name, :email)
+    params.require(:user).permit(:username, :password, :first_name,:last_name, :email)
   end 
 
 end 

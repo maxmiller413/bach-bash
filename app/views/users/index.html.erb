@@ -1,5 +1,5 @@
 <h1> USER INDEX/MAIN PAGE </h1>
 
 <% @users.each do |user| %>
-<%= link_to user.username, '/main/user.id' %>
+<%= link_to user.username, user %>
 <% end %>

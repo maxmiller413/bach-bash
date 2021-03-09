@@ -11,16 +11,18 @@ Rails.application.routes.draw do
 
 #logs user in
   post "/handle_login", to: 'sessions#handle_login'
+  
+  #create user
+  get "/signup", to: "sessions#new", as: "create_account"
+  post "/signup", to: 'sessions#create'
 
 
   ################## USERS ###############################################
-  #create 
-  post "/users", to: 'users#create'
+ 
   #main page
   get "/main", to: "users#index", as: "main"
   get "/main/:id", to: "users#show", as: "user_profile"
-  #create account form
-  get "/signup", to: "users#new", as: "new_user_form"
+  
 
   ################## PARTY ###############################################
   #new party form
@@ -38,6 +40,7 @@ Rails.application.routes.draw do
   
   ################# PLACE ################################################
   get "/places", to: "places#index", as: "places"
+  get '/places/new', to: 'places#new', as: 'new_place'
 
   
   

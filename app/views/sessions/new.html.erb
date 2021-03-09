@@ -1,0 +1,27 @@
+
+<h1> CREATE ACCOUNT </h1>
+
+
+
+    <%= form_tag @sessions do %>
+       
+
+        <%= label_tag :username, "Enter Username" %>
+        <%= text_field_tag :username %>
+
+        <%= label_tag :password, "Password" %>
+        <%= password_field_tag :password %>
+
+        <%= label_tag :first_name, "Enter First Name" %>
+        <%= text_field_tag :first_name %>
+        
+        <%= label_tag :last_name, "Enter Last Name" %>
+        <%= text_field_tag :last_name %>
+        
+        <%= label_tag :email, "Enter Email" %>
+        <%= text_field_tag :email %>
+
+        <%= submit_tag "Sign Up" %>
+
+
+    <% end %>
