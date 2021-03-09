@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :place_collections
   #resources :collections
-  resources :places
+  # resources :places
   #resources :parties
   #resources :users
 
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
 
   #create account form
-  get "/users/new", to: "users#new", as: "new_user_form"
+  get "/signup", to: "users#new", as: "new_user_form"
 
   #create 
   post "/users", to: 'users#create'
@@ -30,6 +30,11 @@ Rails.application.routes.draw do
 
   #new collection
   get "/collections", to: "collections#index", as: "collections"
+  get "/collections/:id", to: "collections#show", as: "collection"
+
+  get "/places", to: "places#index", as: "places"
+
+  get "/invite", to: "collections#invite", as: "invite"
   
 
  

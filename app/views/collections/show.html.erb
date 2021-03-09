@@ -1,0 +1,15 @@
+<h1> <%= @collection.party.name %> </h1>
+
+
+<% @collection.places.each do |place|%>
+    <%= place.name%>
+    <br>
+    <%= place.address %>,
+    <%= place.city%>,
+    <%= place.state%>
+    
+        <%end%>
+        <hr>
+<%= link_to "edit/delete" %>
+<%= link_to "view email list" %>
+<%= link_to "invite form", invite_path %>

@@ -1,1 +1,9 @@
 <h1>COLLECTIONS INDEX</h1>
+
+<% @collections.each do |collection| %>
+<%= link_to collection.name, collection %>
+<% end %>
+<hr>
+
+<%= link_to "browse places", places_path %>
+
