@@ -1,0 +1,7 @@
+<h1>PLACES</h1>
+
+<%= form_with url: search_path, method: "get", local: true do%>
+<%= label_tag :city, "Enter City name: " %>
+<%= text_field_tag :city %>
+<%= submit_tag "search"  %>
+<% end %>

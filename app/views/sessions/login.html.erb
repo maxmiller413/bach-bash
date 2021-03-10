@@ -1,16 +1,24 @@
 <h1> LOGIN </h1>
 
+<main>
+<div class="form">
 
 <%= form_tag "/handle_login" do %>
 
     <%= label_tag :username, "Enter Username" %>
     <%= text_field_tag :username %>
+    <br><br>
 
     <%= label_tag :password, "Password" %>
     <%= password_field_tag :password %>
+    <br><br>
 
     <%= submit_tag "Login" %>
+    <br><br>
+</div>
     
-    <%= link_to "Create Account", create_account_path %>
+    <p><%= link_to "New User?", create_account_path %><p>
 
 <% end %>
+
+</main>
