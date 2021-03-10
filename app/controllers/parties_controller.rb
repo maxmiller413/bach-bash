@@ -10,8 +10,11 @@ class PartiesController < ApplicationController
     end 
 
     def create
-        @party = Party.create(party_params)
-        redirect_to collections_path
+        party = Party.create(party_params)
+
+        collection = Collection.create(user_id: current_user.id, party_id: party.id, name: party.name)
+
+        redirect_to user_profile_path(@current_user)
     end 
 
     private

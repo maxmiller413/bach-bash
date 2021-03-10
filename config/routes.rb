@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   #main page
   get "/main", to: "users#index", as: "main"
   get "/main/:id", to: "users#show", as: "user_profile"
-  
+
+  post "/users", to: "users#create", as: "users"
 
   ################## PARTY ###############################################
   #new party form
@@ -33,10 +34,28 @@ Rails.application.routes.draw do
   get "/parties/:id", to: "parties#show", as: "party"
 
   ################# COLLECTION ###########################################
-  #new collection
+
+
+  #index collections
   get "/collections", to: "collections#index", as: "collections"
+  #new collection
+  get "/collections/new", to: "collections#new", as: "new_collection"
+  #create collection 
+  post "/collections", to: "collections#create", as: "create_collection"
+
+  #show collection 
   get "/collections/:id", to: "collections#show", as: "collection"
-  get "/invite", to: "collections#invite", as: "invite"
+
+  #edit collection 
+  get "/collections/:id/edit", to: "collections#edit", as: "edit_collection"
+
+  #update collection 
+  patch "/collections/:id", to: "collections#update", as: "update_collection"
+
+
+  # get "/collections", to: "collections#index", as: "collections"
+  # get "/collections/:id", to: "collections#show", as: "collection"
+  # get "/invite", to: "collections#invite", as: "invite"
   
   ################# PLACE ################################################
   get "/places", to: "places#index", as: "places"

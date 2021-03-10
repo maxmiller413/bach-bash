@@ -1,0 +1,13 @@
+<h1> NEW COLLECTION </h1>
+
+<%= form_for @collection do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :party_id %>
+    <%= f.collection_select :party_id, @parties, :id, :name %><br>
+
+    <%= f.submit "Create Collection" %>
+
+<% end %>

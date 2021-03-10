@@ -1,27 +1,23 @@
 
 <h1> CREATE ACCOUNT </h1>
 
+    <%= form_for @new_user do |f| %>
 
+        <%= f.label :username, "Enter Username" %>
+        <%= f.text_field :username %>
 
-    <%= form_tag @sessions do %>
-       
+        <%= f.label :password, "Enter Password" %>
+        <%= f.password_field :password %>
 
-        <%= label_tag :username, "Enter Username" %>
-        <%= text_field_tag :username %>
+        <%= f.label :first_name, "Enter First Name" %>
+        <%= f.text_field :first_name %>
 
-        <%= label_tag :password, "Password" %>
-        <%= password_field_tag :password %>
+        <%= f.label :last_name, "Enter Last Name" %>
+        <%= f.text_field :last_name %>
 
-        <%= label_tag :first_name, "Enter First Name" %>
-        <%= text_field_tag :first_name %>
-        
-        <%= label_tag :last_name, "Enter Last Name" %>
-        <%= text_field_tag :last_name %>
-        
-        <%= label_tag :email, "Enter Email" %>
-        <%= text_field_tag :email %>
+        <%= f.label :email, "Enter Email" %>
+        <%= f.text_field :email %>
 
-        <%= submit_tag "Sign Up" %>
-
+        <%= f.submit "Done" %>
 
     <% end %>

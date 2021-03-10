@@ -1,14 +1,21 @@
-<h1> <%= @user.name %> </h1>
+<h1> <%= @current_user.name %> PROFILE </h1>
+
+<p> 
+
+ITINERARY:
+    <% @collections.each do |collection| %>
+        <%= collection.name %> <br>
+        
+        <% collection.places.each do |place| %> 
+            <%= place.name %> <br>
+        
+            <% end %>
+
+    <% end %>
+
+</p>
+
+<%= link_to "invite" %>
 
 
-
-<% @user.parties.each do |party| %>
-<%= link_to party.name, party  %>
-<% end %>
-<%  %>
-<%  %>
-<%  %>
-<%  %>
-<%  %>
-<%  %>
 
