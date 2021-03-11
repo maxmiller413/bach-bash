@@ -63,7 +63,8 @@ Rails.application.routes.draw do
 
   ################ API ####################################################
   get "places/search_form", to: 'places#search_form', as: 'search_form'
-  get "places/search", to: 'places#search', as: 'search'
+  get "places/search_results", to: 'places#search_results', as: 'search_results'
+  get "places/:id", to: 'places#show', as: 'place'
 
   
   

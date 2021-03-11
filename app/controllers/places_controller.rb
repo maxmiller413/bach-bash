@@ -1,24 +1,32 @@
+require "json" 
 class PlacesController < ApplicationController
     ##call api method
     ##render on the view page
 
     def index 
         @response = flash[response]
-        byebug
         
     end 
 
     def search_form
+        @cities = ["Chicago", "New Orleans", "Dallas", "Las Vegas", "Charleston", "Nashville"]
+
     end 
 
-    def search 
-        client = Yelp::Fusion::Client.new(ENV["API_KEY"])
-        flash[response] = client.search(params[:city], term: 'bars', limit: 3)
-        redirect_to places_path
+    def search_results 
+        byebug
+       @places = Place.by_city(params)
+       @city_name = params[:city]
     end 
 
     def show 
         
+    end 
+
+    private 
+
+    def params 
+        params.require(:place).permit(:city)
     end 
 
 end
