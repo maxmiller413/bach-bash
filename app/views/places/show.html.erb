@@ -1,9 +1,9 @@
 <h1> <%= @place.name %> </h1>
 
 <h2> Address: <%= @place.address %>, <%= @place.city %>, <%= @place.state %></h2>
-<h3> Rating: <%= @place.rating %></h3>
 <h4> <%= link_to "Website", @place.url %></h4>
-<h5> Image: <%= image_tag @place.img_url, height: 300 %></h5>
+<%= image_tag @place.img_url, height: 500, width: 450 %>
+<h5> ✩Rating: <%= @place.rating %>✩</h5>
 
 
 <%= form_tag create_place_path do %>

@@ -14,13 +14,9 @@
  *= require_self
  */
 
- .form {
-     text-align: center;
-     padding: 20px;
-     border: solid;
-     box-sizing: content-box;
-    
- }
+
+
+ 
 
  h1, h2, h3 {
      text-align: center;   
@@ -34,3 +30,10 @@
  p {
      text-align: center;
  }
+
+ .box {
+    text-align: center;
+    padding: 20px;
+    border: solid;
+    box-sizing: content-box;
+   }
