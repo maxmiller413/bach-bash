@@ -22,8 +22,10 @@ Rails.application.routes.draw do
   #main page
   get "/main", to: "users#index", as: "main"
   get "/main/:id", to: "users#show", as: "user_profile"
+  delete "/main/:id", to: "users#delete", as: "delete"
 
   post "/users", to: "users#create", as: "users"
+  
 
   ################## PARTY ###############################################
   #new party form
@@ -32,6 +34,8 @@ Rails.application.routes.draw do
   post "/parties", to: "parties#create"
 
   get "/parties/:id", to: "parties#show", as: "party"
+  get "/parties/:id/edit", to: "parties#edit", as: "edit_party"
+  patch "/parties/:id", to: "parties#update"
 
   ################# COLLECTION ###########################################
 

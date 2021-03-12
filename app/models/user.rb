@@ -18,7 +18,7 @@ class User < ApplicationRecord
         end 
 
         place = day.map do |p|
-            p.place.name
+            p.place
         end 
     end 
         

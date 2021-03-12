@@ -22,10 +22,15 @@
     
  }
 
- h1, h3 {
-     text-align: center;
+ h1, h2, h3 {
+     text-align: center;   
  }
 
+ h1 {
+     color: white;
+     border: solid;
+     background-color: black;
+ }
  p {
      text-align: center;
  }

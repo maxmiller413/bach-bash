@@ -18,6 +18,15 @@ class UsersController < ApplicationController
         redirect_to new_party_path
     end 
 
+
+    def delete
+        @current_user.collections.map  do |collection| 
+            collection.place_collections.destroy_all 
+        end
+        redirect_to user_profile_path(@current_user)
+    end 
+
+
     private
 
     def user_params

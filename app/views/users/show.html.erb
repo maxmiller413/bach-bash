@@ -1,39 +1,58 @@
-<h1> <%= @current_user.name %> PROFILE </h1>
 
-<p> ITINERARY: </p>
+<%= link_to "invite" %>
+<br>
+<%= link_to "search places", search_form_path %>
+
+<main>
+
+<% @current_user.parties.each do |party| %>
+<h1><%= link_to party.name, edit_party_path(party) %></h1>
+<%end %>
+
+
+
+
+<h2> ITINERARY: </h2>
 <hr>
 
 <h3>Thursday: </h3><% @current_user.find_by_day("Thursday").each do |place| %>
    
     
-            <p><%= place %></p>
+            <p><%= link_to place.name, place %></p>
         
         <% end %>
-        
+   
 <hr>
 
 <h3>Friday: </h3><% @current_user.find_by_day("Friday").each do |place| %>
    
     
-    <p><%= place %></p>
+    <p><%= link_to place.name, place %></p>
 
 <% end %>
+
+
 
 <hr>
 
 <h3>Saturday: </h3><% @current_user.find_by_day("Saturday").each do |place| %>
    
     
-    <p><%= place %></p>
+    <p><%= link_to place.name, place %></p>
 
 <% end %>
 
 <hr>
 
+<h2> Host: <%= @current_user.name.titleize %></h2>
 
-<%= link_to "invite" %>
-<br>
-<%= link_to "search places", search_form_path %>
+</main>
+
+<%= button_to "delete itinerary", delete_path, method: :delete %>
+
+
+
+
 
 
 
