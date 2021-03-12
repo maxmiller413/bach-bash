@@ -5,16 +5,16 @@
 
 <%= form_tag "/handle_login" do %>
 
-    <%= label_tag :username, "Enter Username" %>
-    <%= text_field_tag :username %>
-    <br><br>
+    <p><b><%= label_tag :username, "Enter Username" %></b></p>
+    <p><%= text_field_tag :username %></p>
+    <br>
 
-    <%= label_tag :password, "Password" %>
-    <%= password_field_tag :password %>
+    <p><b><%= label_tag :password, "Password" %></b></p>
+    <p><%= password_field_tag :password %></p>
     <br><br>
 
     <%= submit_tag "Login" %>
-    <br><br>
+    <br>
 </div>
     
     <p><%= link_to "New User?", create_account_path %><p>
