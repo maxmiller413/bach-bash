@@ -1,0 +1,19 @@
+<% NEW PLACES CONTROLLER %>
+
+<%= form_for @place_collection do |f| %>
+
+    <%= f.label "playlist" %><br>
+    <%= f.collection_select :collection_id, @place_collections, :name, :name %><br>
+   
+    <%= f.submit "Add this place to your playlist" %>
+
+<% end %> <br> <br>
+
+<%= form_for @place_collection do |f| %>
+
+    <%= f.label "new playlist" %>
+    <%= f.text_field :name %>
+   
+    <%= f.submit "Add this place to new playlist" method: :post%>
+
+<% end %>

@@ -1,0 +1,36 @@
+<h1> <%= @place.name %> </h1>
+
+<h2> Address: <%= @place.address %>, <%= @place.city %>, <%= @place.state %></h2>
+<h3> Rating: <%= @place.rating %></h3>
+<h4> <%= link_to "Website", @place.url %></h4>
+<h5> Image: <%= image_tag @place.img_url, height: 300 %></h5>
+
+
+<%= form_tag create_place_path do %>
+    <%= label_tag "Choose Day" %>
+    <%= text_field_tag :name %>
+
+    <%= label_tag "Choose Collection" %>
+    <%= collection_select(:collection, :collection_id, @collections, :id, :name) %>
+
+    <%= submit_tag "Add place" %>
+
+<% end %>
+
+Thursday: <% @current_user.find_by_day("Thursday").each do |pc| %>
+    <% byebug %>
+    <% pc.places.each do |place| %>
+        <%= place.name %>
+<% end %>
+
+Friday: <% @current_user.find_by_day("Friday").each do |pc| %>
+    <%= pc.places.name %>
+<% end %>
+
+Saturday: <% @current_user.find_by_day("Saturday").each do |pc| %>
+    <%= pc.places.name %>
+<% end %>
+
+Sunday: <% @current_user.find_by_day("Sunday").each do |pc| %>
+    <%= pc.places.name %>
+<% end %>

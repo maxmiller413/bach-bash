@@ -60,6 +60,8 @@ Rails.application.routes.draw do
   ################# PLACE ################################################
   get "/places", to: "places#index", as: "places"
   get '/places/new', to: 'places#new', as: 'new_place'
+  
+  post 'places/:id/create', to: 'places#create', as: "create_place"
 
   ################ API ####################################################
   get "places/search_form", to: 'places#search_form', as: 'search_form'

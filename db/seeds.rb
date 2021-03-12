@@ -10,7 +10,8 @@ User.create(username: "max", password: "abc", first_name: "max", last_name: "mil
 Party.create(name: "Max's bach")
 Collection.create(name: "weekend", user_id: 1, party_id: 1)
 PlaceCollection.create(collection_id: 1, place_id: 1, name: "one day")
-
+PlaceCollection.create(collection_id: 1, place_id: 2, name: "one day")
+PlaceCollection.create(collection_id: 1, place_id: 3, name: "one day")
 
 cities = ["Chicago", "New Orleans", "Dallas", "Las Vegas", "Charleston", "Nashville"]
 
@@ -32,7 +33,7 @@ yelp_params = {
         rating = business.rating
         zip_code = business.location.zip_code
 
-        Place.create(name: name, address: address, city: city, state: state)
+        Place.create(name: name, address: address, city: city, state: state, zip_code: zip_code, rating: rating, url: url, img_url: img_url)
     end 
 
     
