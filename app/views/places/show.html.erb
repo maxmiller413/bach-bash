@@ -1,22 +1,23 @@
 <h1> <%= @place.name %> </h1>
 
 <h2> Address: <%= @place.address %>, <%= @place.city %>, <%= @place.state %></h2>
+
+<p><%= image_tag @place.img_url, height: 500, width: 450 %></p>
 <h4> <%= link_to "Website", @place.url %></h4>
-<%= image_tag @place.img_url, height: 500, width: 450 %>
 <h5> ✩Rating: <%= @place.rating %>✩</h5>
 
 
 <%= form_tag create_place_path do %>
-    <%= label_tag "Choose Day" %>
-    <%= text_field_tag :name %>
+   <p> <%= label_tag "Choose Day" %></p>
+   <p> <%= text_field_tag :name %></p>
 
-    <%= label_tag "Choose Collection" %>
-    <%= collection_select(:collection, :collection_id, @collections, :id, :name) %>
+   <p> <%= label_tag "Choose Collection" %></p>
+   <p> <%= collection_select(:collection, :collection_id, @collections, :id, :name) %> </p>
 
-    <%= submit_tag "Add place" %>
+   <p> <%= submit_tag "Add place" %></p>
 
 <% end %>
 
-<%= link_to "profile page", user_profile_path(@current_user)%>
-<%= link_to "continue browsing", search_form_path %>
+<p><%= link_to "profile page", user_profile_path(@current_user)%></p>
+<p><%= link_to "continue browsing", search_form_path %></p>
 
