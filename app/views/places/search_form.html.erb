@@ -1,9 +1,17 @@
 <h1>PLACES</h1>
+<main>
+
+<a><%= link_to "profile page", user_profile_path(@current_user)%></a>
+<br><br>
+
+<div class="search"> 
+
 
 <%= form_with url: search_results_path, method: "get", local: true do%>
-<%= label_tag :city, "Enter City name: " %>
-<%= text_field_tag :city %>
-<%= submit_tag "search" %>
+<p><b><%= label_tag :city, "Enter City Name: " %></b></p>
+<p><%= text_field_tag :city %></p>
+<p><%= submit_tag "search" %></p>
 <% end %>
+<div>
 
-<%= link_to "profile page", user_profile_path(@current_user)%>
+</main>

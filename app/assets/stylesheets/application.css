@@ -16,7 +16,9 @@
 
 
 
- 
+ * {
+     background-color: lavender;
+ }
 
  h1, h2, h3, h4, h5 {
      text-align: center;   
@@ -29,6 +31,7 @@
  }
  p {
      text-align: center;
+    
  }
 
  .box {
@@ -37,3 +40,29 @@
     border: solid;
     box-sizing: content-box;
    }
+
+   .search {
+    text-align: center;
+    padding: 10px;
+    border: solid;
+    box-sizing: content-box;
+   }
+
+   a:link {
+    color: black;
+  }
+
+  /* visited link */
+a:visited {
+    color: rgb(223, 141, 172);
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: rgb(144, 7, 76);
+  }
+  
+  /* selected link */
+  a:active {
+    color: rgb(69, 9, 138);
+  }

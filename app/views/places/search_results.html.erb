@@ -1,7 +1,10 @@
 <h1><%= @city_name %> Bars</h1>
+<a><%= link_to "profile page", user_profile_path(@current_user)%></a>
+<main>
 
 <% @places.each do |place| %>
-    <%= link_to place.name, place %><br>
+    <a><p><%= link_to place.name, place %><br></p></a>
 <% end %>
+</main>
 
-<%= link_to "profile page", user_profile_path(@current_user)%>
+
