@@ -18,7 +18,7 @@ cities = ["Chicago", "New Orleans", "Dallas", "Las Vegas", "Charleston", "Nashvi
 client = Yelp::Fusion::Client.new(ENV["API_KEY"])
 yelp_params = {
     term: 'bars',
-    limit: 3
+    limit: 30
   }
  cities.each do |city|
     response = client.search(city, yelp_params)

@@ -17,20 +17,6 @@
 
 <% end %>
 
-Thursday: <% @current_user.find_by_day("Thursday").each do |pc| %>
-    <% byebug %>
-    <% pc.places.each do |place| %>
-        <%= place.name %>
-<% end %>
+<%= link_to "profile page", user_profile_path(@current_user)%>
+<%= link_to "continue browsing", search_form_path %>
 
-Friday: <% @current_user.find_by_day("Friday").each do |pc| %>
-    <%= pc.places.name %>
-<% end %>
-
-Saturday: <% @current_user.find_by_day("Saturday").each do |pc| %>
-    <%= pc.places.name %>
-<% end %>
-
-Sunday: <% @current_user.find_by_day("Sunday").each do |pc| %>
-    <%= pc.places.name %>
-<% end %>

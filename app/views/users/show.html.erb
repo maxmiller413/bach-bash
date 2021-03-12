@@ -1,29 +1,36 @@
 <h1> <%= @current_user.name %> PROFILE </h1>
 
-<p> 
+<p> ITINERARY: </p>
+<hr>
 
-ITINERARY:
-    <% @collections.each do |collection| %>
-        <%= collection.name %> <br>
+Thursday: <% @current_user.find_by_thursday.each do |place| %>
+   
+    
+            <%= place %>
+        <% byebug %>
+        <% end %>
         
-        <% collection.places.each do |place| %> 
-            <%= place.name %> <br>
-        
-            <% end %>
+<hr>
 
-    <% end %>
+Friday: <% @current_user.find_by_day("Friday").each do |place| %>
+   
+    
+    <%= place %>
 
-</p>
+<% end %>
+<hr>
 
-Thursday: 
+Saturday: <% @current_user.find_by_day("Saturday").each do |place| %>
+   
+    
+    <%= place %>
 
-Friday:
+<% end %>
+<hr>
 
-Saturday:
-
-Sunday:
 
 <%= link_to "invite" %>
+<br>
 <%= link_to "search places", search_form_path %>
 
 
