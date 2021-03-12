@@ -3,29 +3,31 @@
 <p> ITINERARY: </p>
 <hr>
 
-Thursday: <% @current_user.find_by_thursday.each do |place| %>
+<h3>Thursday: </h3><% @current_user.find_by_day("Thursday").each do |place| %>
    
     
-            <%= place %>
-        <% byebug %>
+            <p><%= place %></p>
+        
         <% end %>
         
 <hr>
 
-Friday: <% @current_user.find_by_day("Friday").each do |place| %>
+<h3>Friday: </h3><% @current_user.find_by_day("Friday").each do |place| %>
    
     
-    <%= place %>
+    <p><%= place %></p>
 
 <% end %>
+
 <hr>
 
-Saturday: <% @current_user.find_by_day("Saturday").each do |place| %>
+<h3>Saturday: </h3><% @current_user.find_by_day("Saturday").each do |place| %>
    
     
-    <%= place %>
+    <p><%= place %></p>
 
 <% end %>
+
 <hr>
 
 
